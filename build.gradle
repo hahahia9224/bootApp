@@ -1,6 +1,8 @@
 plugins {
 	id 'org.springframework.boot' version '2.1.4.RELEASE'
 	id 'java'
+	id 'groovy'
+	id 'idea'
 }
 
 apply plugin: 'io.spring.dependency-management'
@@ -8,8 +10,6 @@ apply plugin: 'io.spring.dependency-management'
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
-targetCompatibility = 1.8
-
 
 repositories {
 	mavenCentral()
@@ -22,6 +22,9 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 
 	compile('org.projectlombok:lombok')
+
+	// Groovy
+	compile 'org.codehaus.groovy:groovy-all:2.4.7'
 
 	// test
 	testCompile('org.springframework.boot:spring-boot-starter-test')
