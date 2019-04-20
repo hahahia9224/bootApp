@@ -1,7 +1,7 @@
-Springboot Top App
+Spring boot Test App
 =======
 
-How to use 
-----------
 
-hahahia9224@gmail.com
+Author
+----------
+minhwa jin: hahahia9224@gmail.com
