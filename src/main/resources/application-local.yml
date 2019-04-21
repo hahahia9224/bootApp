@@ -1,3 +1,5 @@
 logging:
   pattern:
     console: "%clr(%-5level) %d{yyyy-MM-dd HH:mm:ss} [%thread] %logger{36} - %msg%n"
+server:
+  port: 12345

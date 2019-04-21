@@ -1,5 +1,6 @@
 package com.example.bootApp.service;
 
+import com.example.bootApp.model.Test;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -10,8 +11,18 @@ import java.util.List;
 @Service
 public class TestService {
 
-	public List<String> getStrings() {
+	public List<Test> getStrings() {
 		log.info("call getStrings");
-		return Arrays.asList("string1", "string2", "string3", "string4");
+		Test a = new Test("abc", "cde", "efg");
+		a.setName("name!!");
+		log.debug(a.toString());
+
+		return Arrays.asList(a,
+			new Test("1", "2", "3"),
+			new Test("1", "2", "3"),
+			new Test("1", "2", "3"),
+			new Test("1", "2", "3"),
+			new Test("1", "2", "3")
+			);
 	}
 }

@@ -1,5 +1,6 @@
 package com.example.bootApp.controller;
 
+import com.example.bootApp.model.Test;
 import com.example.bootApp.service.TestService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,7 @@ public class TestController {
 	}
 
 	@GetMapping("/strings")
-	public List<String> getStrings() {
+	public List<Test> getStrings() {
 		return testService.getStrings();
 	}
 }
