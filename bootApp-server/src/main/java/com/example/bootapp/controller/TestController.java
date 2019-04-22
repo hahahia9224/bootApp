@@ -1,8 +1,8 @@
-package com.example.bootapp.configuration.controller;
+package com.example.bootapp.controller;
 
-import com.example.bootapp.configuration.model.Test;
-import com.example.bootapp.configuration.service.MyService;
-import com.example.bootapp.configuration.service.TestService;
+import com.example.bootapp.model.Test;
+import com.example.bootapp.service.MyService;
+import com.example.bootapp.service.TestService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

@@ -1,6 +1,6 @@
-package com.example.bootapp.configuration.repository;
+package com.example.bootapp.repository;
 
-import com.example.bootapp.configuration.model.Customer;
+import com.example.bootapp.model.Customer;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

@@ -1,6 +1,6 @@
-package com.example.bootapp.configuration.service;
+package com.example.bootapp.service;
 
-import com.example.bootapp.configuration.model.Test;
+import com.example.bootapp.model.Test;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

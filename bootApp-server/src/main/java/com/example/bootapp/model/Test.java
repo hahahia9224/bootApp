@@ -1,4 +1,4 @@
-package com.example.bootapp.configuration.model;
+package com.example.bootapp.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
