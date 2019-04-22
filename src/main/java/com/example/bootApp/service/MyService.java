@@ -19,12 +19,7 @@ public class MyService{
         this.testRepository = testRepository;
     }
 
-    public String getTest(){
-
-        return "ASDF";
-    }
-
-    public void InsertValues(){
+    public void InsertValues() {
         testRepository.save(new Customer("AA","BB"));
         testRepository.save(new Customer("AA1","BB1"));
         testRepository.save(new Customer("A1A","B1B"));
