@@ -1,12 +1,11 @@
-package com.example.bootApp.service;
+package com.example.bootapp.configuration.service;
 
-import com.example.bootApp.model.Customer;
-import com.example.bootApp.repository.TestRepository;
+import com.example.bootapp.configuration.model.Customer;
+import com.example.bootapp.configuration.repository.TestRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
 import java.util.List;
 
 @Slf4j

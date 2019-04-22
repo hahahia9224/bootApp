@@ -1,8 +1,9 @@
-package com.example.bootApp.repository;
-import java.util.List;
+package com.example.bootapp.configuration.repository;
 
-import com.example.bootApp.model.Customer;
+import com.example.bootapp.configuration.model.Customer;
 import org.springframework.data.repository.CrudRepository;
+
+import java.util.List;
 
 public interface TestRepository extends CrudRepository<Customer, Long> {
 
