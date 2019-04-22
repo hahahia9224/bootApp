@@ -15,11 +15,12 @@ public class TestController {
 
 	private TestService testService;
 	private MyService myService;
+
 	@Autowired
 	public TestController(TestService testService, MyService myService) {
 
 		this.testService = testService;
-		this.myService=myService;
+		this.myService = myService;
 	}
 
 	@GetMapping("/strings")
@@ -28,13 +29,13 @@ public class TestController {
 	}
 
 	@GetMapping("/insert")
-	public String AddValue(){
+	public String AddValue() {
 		myService.InsertValues();
 		return "End";
 	}
 
 	@RequestMapping(value = "/Get", method= RequestMethod.GET)
-	public String AddValue(@RequestParam("val") String val){
+	public String AddValue(@RequestParam("val") String val) {
 		return myService.GetByLast(val).toString();
 	}
 
