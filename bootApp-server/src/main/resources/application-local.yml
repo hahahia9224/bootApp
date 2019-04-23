@@ -1,12 +1,3 @@
 logging:
   pattern:
     console: "%clr(%-5level) %d{yyyy-MM-dd HH:mm:ss} [%thread] %logger{36} - %msg%n"
-spring:
-  datasource:
-    url: jdbc:mysql://127.0.0.1:3306/testdatabase?characterEncoding=UTF-8&serverTimezone=UTC
-    username: root
-    password: qwe123!@#
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true

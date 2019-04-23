@@ -1,0 +1,5 @@
+apply plugin: 'io.spring.dependency-management'
+jar {
+	archiveName = 'app.jar'
+}
+compileJava.dependsOn(processResources)
