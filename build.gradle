@@ -40,14 +40,17 @@ subprojects {
 }
 
 project(':bootApp-server') {
+
 	dependencies {
-		// spring
-		compile('org.springframework.boot:spring-boot-starter')
-		compile('org.springframework.boot:spring-boot-starter-web')
-		compile('org.projectlombok:lombok')
+	// spring
+	compile('org.springframework.boot:spring-boot-starter')
+	compile('org.springframework.boot:spring-boot-starter-web')
 
-		// test
-		testCompile('org.springframework.boot:spring-boot-starter-test')
+	// lombok
+	compile('org.projectlombok:lombok')
+
+	// test
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+
 	}
-
 }

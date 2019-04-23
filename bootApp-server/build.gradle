@@ -3,3 +3,6 @@ jar {
 	archiveName = 'app.jar'
 }
 compileJava.dependsOn(processResources)
+
+dependencies {
+}
