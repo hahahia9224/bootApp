@@ -25,4 +25,15 @@ public class TestController {
 		return testService.getStrings();
 	}
 
+	@GetMapping("/insert")
+	public String addCustomers() {
+		testService.insertValues();
+		return "End";
+	}
+
+	@RequestMapping(value = "/Get", method= RequestMethod.GET)
+	public String getValue(@RequestParam("val") String val) {
+		return testService.GetCustomersByLastName(val).toString();
+	}
+
 }
