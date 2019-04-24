@@ -1,37 +1,58 @@
-plugins {
-	id 'org.springframework.boot' version '2.1.4.RELEASE'
-	id 'java'
-	id 'groovy'
-	id 'idea'
+buildscript {
+	ext {
+		springBootVersion = '2.1.4.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath "io.spring.gradle:dependency-management-plugin:1.0.6.RELEASE"
+	}
 }
 
-apply plugin: 'io.spring.dependency-management'
+subprojects {
+	group = 'com.example'
+	version = '0.0.1-SNAPSHOT'
 
-group = 'com.example'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
+	apply plugin: 'eclipse'
+	apply plugin: 'idea'
+	apply plugin: 'java'
+	apply plugin: 'org.springframework.boot'
 
-repositories {
-	mavenCentral()
+	sourceCompatibility = 1.8
+
+	repositories {
+		mavenCentral()
+	}
+
+	task initSourceFolders {
+		sourceSets*.java.srcDirs*.each {
+			if( !it.exists() ) {
+				it.mkdirs()
+			}
+		}
+
+		sourceSets*.resources.srcDirs*.each {
+			if( !it.exists() ) {
+				it.mkdirs()
+			}
+		}
+	}
 }
 
-dependencies {
+project(':bootApp-server') {
 
-	// JPA Data (We are going to use Repositories, Entities, Hibernate, etc...)
-	compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+	dependencies {
+		// spring
+		compile('org.springframework.boot:spring-boot-starter')
+		compile('org.springframework.boot:spring-boot-starter-web')
 
-	// Use MySQL Connector-J
-	compile 'mysql:mysql-connector-java'
-	// spring
-	compile('org.springframework.boot:spring-boot-starter')
-	compile('org.springframework.boot:spring-boot-starter-web')
-	compile('org.projectlombok:lombok')
+		// lombok
+		compile('org.projectlombok:lombok')
 
-	// Groovy
-	compile 'org.codehaus.groovy:groovy-all:2.4.7'
+		// test
+		testCompile('org.springframework.boot:spring-boot-starter-test')
 
-	// test
-	testCompile('org.springframework.boot:spring-boot-starter-test')
-	testCompile('org.spockframework:spock-core:1.1-groovy-2.4')
-	testCompile('org.spockframework:spock-spring:1.1-groovy-2.4')
+	}
 }

@@ -1,1 +1,3 @@
 rootProject.name = 'bootApp'
+
+include 'bootApp-server'

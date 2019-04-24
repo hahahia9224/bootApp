@@ -1,8 +1,7 @@
-package com.example.bootApp.controller;
+package com.example.bootapp.controller;
 
-import com.example.bootApp.model.Test;
-import com.example.bootApp.service.MyService;
-import com.example.bootApp.service.TestService;
+import com.example.bootapp.model.Test;
+import com.example.bootapp.service.TestService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -11,16 +10,15 @@ import java.util.List;
 
 @RestController
 @Slf4j
+@RequestMapping("/test")
 public class TestController {
 
 	private TestService testService;
-	private MyService myService;
 
 	@Autowired
-	public TestController(TestService testService, MyService myService) {
+	public TestController(TestService testService) {
 
 		this.testService = testService;
-		this.myService = myService;
 	}
 
 	@GetMapping("/strings")
@@ -29,14 +27,14 @@ public class TestController {
 	}
 
 	@GetMapping("/insert")
-	public String AddValue() {
-		myService.InsertValues();
+	public String addCustomers() {
+		testService.insertValues();
 		return "End";
 	}
 
 	@RequestMapping(value = "/Get", method= RequestMethod.GET)
-	public String AddValue(@RequestParam("val") String val) {
-		return myService.GetByLast(val).toString();
+	public String getValue(@RequestParam("val") String val) {
+		return testService.GetCustomersByLastName(val).toString();
 	}
 
 }
