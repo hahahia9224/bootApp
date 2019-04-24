@@ -1,14 +1,22 @@
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'groovy'
+
 jar {
 	archiveName = 'app.jar'
 }
 compileJava.dependsOn(processResources)
 
 dependencies {
+
 	// JPA Data (We are going to use Repositories, Entities, Hibernate, etc...)
 	compile 'org.springframework.boot:spring-boot-starter-data-jpa'
 
 	// Use MySQL Connector-J
 	compile 'mysql:mysql-connector-java'
+
+	// Spock + Groovy
+	testCompile 'org.codehaus.groovy:groovy-all:2.4.1'
+	testCompile 'org.spockframework:spock-core:1.1-groovy-2.4'
+	testCompile 'org.spockframework:spock-spring:1.1-groovy-2.4'
 
 }
