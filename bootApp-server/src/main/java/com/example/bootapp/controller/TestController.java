@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @Slf4j
+@RequestMapping("/test")
 public class TestController {
 
 	private TestService testService;
