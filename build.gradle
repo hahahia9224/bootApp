@@ -41,9 +41,10 @@ subprojects {
 	}
 }
 
-project(':bootApp-server') {
+project(':bootapp-server') {
 
 	dependencies {
+
 		// spring
 		compile('org.springframework.boot:spring-boot-starter')
 		compile('org.springframework.boot:spring-boot-starter-web')
