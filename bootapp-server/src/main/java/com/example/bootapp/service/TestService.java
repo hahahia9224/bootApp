@@ -42,7 +42,7 @@ public class TestService {
 		testRepository.save(new Customer("A1A","B1B"));
 	}
 
-	public List<Customer> GetCustomersByLastName(String s) {
+	public List<Customer> getCustomersByLastName(String s) {
 		return testRepository.findByLastName(s);
 	}
 

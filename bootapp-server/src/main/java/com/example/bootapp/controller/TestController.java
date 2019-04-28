@@ -32,9 +32,9 @@ public class TestController {
 		return "End";
 	}
 
-	@RequestMapping(value = "/Get", method= RequestMethod.GET)
+	@RequestMapping(value = "/get", method= RequestMethod.GET)
 	public String getValue(@RequestParam("val") String val) {
-		return testService.GetCustomersByLastName(val).toString();
+		return testService.getCustomersByLastName(val).toString();
 	}
 
 }
