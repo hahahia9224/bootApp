@@ -4,11 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
 @Data
 class ApiProxyModelKeys implements Serializable{
@@ -31,11 +29,25 @@ public class ApiProxyModel {
     @Column(length = 128, nullable = false)
     private String key2;
 
+}
 
-    /*public ApiProxyModel(String host, String key1, String key2) {
-        this.host=host;
-        this.key1=key1;
-        this.key2=key2;
-    }*/
+
+@Entity
+@Table(indexes = {@Index(columnList="api,lastUpdateTime")})
+@NoArgsConstructor
+@AllArgsConstructor
+class ApiProxyRequestModel {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long Idx;
+
+    @Column(length = 128, nullable = false)
+    private String host;
+    @Column(length = 64, nullable = false)
+    private String key1;
+    @Column(length = 128, nullable = false)
+    private String api;
+    @Column(nullable = false)
+    private Date lastUpdateTime;
 
 }
