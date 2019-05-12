@@ -1,4 +1,6 @@
 package com.example.bootapp.service;
+import com.example.bootapp.model.ApiProxyModel;
+import com.example.bootapp.repository.ApiProxyRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -12,6 +14,9 @@ import org.springframework.web.client.RestTemplate;
 public class ApiProxyService {
    //@Autowired
     private final RestTemplate restTemplate;
+
+    @Autowired
+    private ApiProxyRepository apiProxyRepository;
 
 
     public ApiProxyService(RestTemplateBuilder restTemplateBuilder){

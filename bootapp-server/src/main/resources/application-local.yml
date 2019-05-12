@@ -6,7 +6,8 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/testdatabase?characterEncoding=UTF-8&serverTimezone=UTC
     username: root
     password: qwe123!@#
+    initialization-mode: 'always'
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: 'create-drop'
     show-sql: true
